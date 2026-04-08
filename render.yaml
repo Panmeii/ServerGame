@@ -1,0 +1,14 @@
+# render.yaml
+services:
+  - type: web
+    name: tiktok-live-server
+    env: node
+    buildCommand: npm install
+    startCommand: node src/server.js
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: PORT
+        value: 10000
+      - key: ALLOWED_ORIGINS
+        value: https://your-vercel-app.vercel.app,https://localhost:3000
